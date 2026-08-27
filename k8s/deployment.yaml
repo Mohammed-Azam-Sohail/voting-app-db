@@ -19,10 +19,6 @@ spec:
         app: db
 
     spec:
-      securityContext:
-        runAsUser: 70
-        runAsGroup: 70
-        runAsNonRoot: true      
       containers:
         - image: postgres:15-alpine
           name: postgres
