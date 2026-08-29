@@ -7,6 +7,12 @@ metadata:
   name: db
 
 spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+
   replicas: 1
 
   selector:
@@ -19,6 +25,11 @@ spec:
         app: db
 
     spec:
+      securityContext:
+        runAsUser: 70
+        runAsGroup: 70
+        runAsNonRoot: true
+
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
