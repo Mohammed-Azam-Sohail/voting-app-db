@@ -5,6 +5,7 @@ metadata:
   name: db-pvc
 
 spec:
+  storageClassName: local-path
   accessModes:
     - ReadWriteOnce
 
