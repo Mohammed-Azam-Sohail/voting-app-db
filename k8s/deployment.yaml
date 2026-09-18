@@ -25,6 +25,7 @@ spec:
         app: db
 
     spec:
+      automountServiceAccountToken: false
       securityContext:
         runAsUser: 70
         runAsGroup: 70
